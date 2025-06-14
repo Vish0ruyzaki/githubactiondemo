@@ -19,7 +19,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y maven
-        
+
     - name: Build with Maven
       run: mvn compile
 
@@ -40,7 +40,7 @@ jobs:
       run: trivy fs --format table -o fs-report.json .
 
     - name: gitleaks installtion 
-      run: sudo apt-get install gitleaks -y
+      run: sudo apt-get install -y gitleaks 
 
     - name: gitleaks scan 
       run: |
