@@ -41,9 +41,9 @@ jobs:
 
     - name: gitleaks scan 
       run: |
-          wget https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks-linux-amd64 -O gitleaks
-          chmod +x gitleaks
-          sudo mv gitleaks /usr/local/bin/
+          wget https://github.com/gitleaks/gitleaks/releases/download/vX.Y.Z/gitleaks-linux-amd64
+          chmod +x gitleaks-linux-amd64
+          sudo mv gitleaks-linux-amd64 /usr/local/bin/gitleaks
           gitleaks detect --source . --report-path gitleaks-report.json --format json
 
   test:
