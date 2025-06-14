@@ -101,7 +101,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }} 
   
-  docker_build image:
+  docker_build_image:
     runs-on: self-hosted
     needs: build_project_and_sonar_scan
     steps:
