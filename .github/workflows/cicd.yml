@@ -40,7 +40,11 @@ jobs:
       run: trivy fs --format table -o fs-report.json .
 
     - name: Run Gitleaks
-      run: gitleaks detect --source . --report-path gitleaks-report.json --report-format json
+      run: |
+         cd ~/actions-runner/_work/githubactiondemo/githubactiondemo
+         gitleaks detect --source . --report-path gitleaks-report.json --report-format json
+
+
 
   test:
     runs-on: self-hosted
