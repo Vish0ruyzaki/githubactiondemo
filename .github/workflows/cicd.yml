@@ -39,9 +39,6 @@ jobs:
     - name: trivy fs scan 
       run: trivy fs --format table -o fs-report.json .
 
-    - name: gitleaks installtion 
-      run: sudo apt-get install -y gitleaks 
-
     - name: gitleaks scan 
       run: |
           wget https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks-linux-amd64 -O gitleaks
