@@ -1,4 +1,4 @@
-name: Java CI with Maven,
+name: Java CI with Maven
 
 on:
   push:
@@ -41,7 +41,7 @@ jobs:
 
     - name: Run Gitleaks
       run: |
-         cd ~/actions-runner/_work/githubactiondemo/githubactiondemo
+         cd /home/ubuntu/actions-runner/_work/githubactiondemo/githubactiondemo
          gitleaks detect --source . --report-path gitleaks-report.json --report-format json
 
 
