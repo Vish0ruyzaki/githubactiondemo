@@ -38,7 +38,11 @@ jobs:
       run: sudo apt-get install gitleaks -y
 
     - name: gitleaks scan 
-      run: gitleaks detect --source . --report-path gitleaks-report.json --format json
+      run: |
+          wget https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks-linux-amd64 -O gitleaks
+          chmod +x gitleaks
+          sudo mv gitleaks /usr/local/bin/
+          gitleaks detect --source . --report-path gitleaks-report.json --format json
 
   test:
     runs-on: self-hosted
