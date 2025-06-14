@@ -74,6 +74,9 @@ jobs:
     - name: build with Maven
       run: mvn package   
 
+    - name: install jq
+      run: sudo apt-get update && sudo apt-get install -y jq
+      
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
