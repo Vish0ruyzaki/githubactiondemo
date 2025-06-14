@@ -39,13 +39,6 @@ jobs:
     - name: trivy fs scan 
       run: trivy fs --format table -o fs-report.json .
 
-    - name: Run Gitleaks
-      run: |
-         cd /home/ubuntu/actions-runner/_work/githubactiondemo/githubactiondemo
-         gitleaks detect --source . --report-path gitleaks-report.json --report-format json
-
-
-
   test:
     runs-on: self-hosted
     needs: security-checks
