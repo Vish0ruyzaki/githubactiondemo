@@ -39,12 +39,13 @@ jobs:
     - name: trivy fs scan 
       run: trivy fs --format table -o fs-report.json .
 
-    - name: Install and Run Gitleaks
+    - name: Install and Run Gitleaks (v8.18.1)
       run: |
-       wget https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks_Linux_x86_64.tar.gz
-       tar -xzf gitleaks_Linux_x86_64.tar.gz
+       curl -sSL https://github.com/gitleaks/gitleaks/releases/download/v8.18.1/gitleaks_$(uname -s)_$(uname -m).tar.gz -o gitleaks.tar.gz
+       tar -xzf gitleaks.tar.gz
        sudo mv gitleaks /usr/local/bin/
        gitleaks detect --source . --report-path gitleaks-report.json --format json
+
 
 
   test:
